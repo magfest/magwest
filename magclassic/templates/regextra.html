@@ -2,11 +2,13 @@
 <script>
     if (window.BADGE_TYPES) {
         window.BADGE_TYPES.options[0].description = 'Allows access to the festival for its duration (Sept 11-13). {% price_notice "Preregistration" c.PREREG_TAKEDOWN %}';
-        $.field('amount_extra').parents('.form-group').hide()
     }
 
     $(function() {
         //$('#tshirt-size-guide').insertAfter($.field('shirt'));
+        if ($.field('amount_extra')) {
+            $.field('amount_extra').parents('.form-group').hide();
+        }
         if ($.field('badges')) {
             $('#group-explanation').insertAfter($.field('badges').parents('.form-group'));
         } else {
