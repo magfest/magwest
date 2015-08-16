@@ -1,0 +1,139 @@
+{% extends "base-admin.html" %}
+{% block title %}Department Checklist - Treasury{% endblock %}
+{% block content %}
+
+<script>
+    var showOrHideForm = function () {
+        setVisible('#formcontent', $.field('needs').prop('checked') && !$.field('defer').prop('checked'));
+    };
+    var showOrHideCash = function () {
+        setVisible('#cash', $.field('needs_cash').prop('checked'));
+    };
+    var showOrHideMPoints = function () {
+        setVisible('#mpoints', $.field('needs_mpoints').prop('checked'));
+    };
+</script>
+
+<h2>Cash / MPoint Needs</h2>
+
+<form method="post" action="allotments">
+{% csrf_token %}
+<input type="checkbox" name="needs" value="yes" onClick="showOrHideForm()" /> Check this box if your department needs cash and/or mpoints, otherwise just submit this form to let us know you DON'T need any <br/>
+<input type="checkbox" name="defer" value="yes" onClick="showOrHideForm()" /> Check this box if someone else is filling out this form for your department (seriously, don't everyone just check this!) <br/>
+<div id="formcontent" style="display:none">
+    <br/>
+    Please provide the name of the department head who will be making cash/MPoint decisions: <br/>
+    <input type="text" name="dept_head_name" />
+
+    <br/> <br/>
+    Please provide the email of the department head who will be making cash/MPoint decisions: <br/>
+    <input type="text" name="dept_head_email" />
+
+    <br/> <br/>
+    Please provide the needs for the following:
+
+    <h3>Cash Needs</h3>
+    <input type="checkbox" name="needs_cash" value="yes" onClick="showOrHideCash()"> My department needs cash
+    <div id="cash" style="display:none">
+        For each cash box you recieve (Charity gets 1 box per-shift, all other departments currently get 2 per-shift, leave a comment below if you think you'll need more):
+        <table style="width:auto">
+        <tr>
+            <td>Number of $1 Bills</td>
+            <td><input type="text" name="1bills" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $5 Bills</td>
+            <td><input type="text" name="5bills" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $10 Bills</td>
+            <td><input type="text" name="10bills" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $20 Bills</td>
+            <td><input type="text" name="20bills" size="3" /></td>
+        </tr>
+        </table>
+    </div>
+
+    <h3>MPoints</h3>
+    <input type="checkbox" name="needs_mpoints" value="yes" onClick="showOrHideMPoints()"> My department needs mpoints
+    <div id="mpoints" style="display:none">
+        <b>Make sure to account for special rewards as well as tournament prizes in your allotments!</b>
+        <table style="width:auto">
+        <tr style="font-weight:bold">
+            <td>MPoint Allotment</td>
+            <td>Friday</td>
+            <td>Saturday</td>
+            <td>Sunday</td>
+        </tr>
+        <tr>
+            <td>Number of $1 mpoint tokens</td>
+            <td><input type="text" name="fri_1mpoint" size="3" /></td>
+            <td><input type="text" name="sat_1mpoint" size="3" /></td>
+            <td><input type="text" name="sun_1mpoint" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $5 mpoint tokens</td>
+            <td><input type="text" name="fri_5mpoint" size="3" /></td>
+            <td><input type="text" name="sat_5mpoint" size="3" /></td>
+            <td><input type="text" name="sun_5mpoint" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $10 mpoint tokens</td>
+            <td><input type="text" name="fri_10mpoint" size="3" /></td>
+            <td><input type="text" name="sat_10mpoint" size="3" /></td>
+            <td><input type="text" name="sun_10mpoint" size="3" /></td>
+        </tr>
+        <tr>
+            <td>Number of $20 mpoint tokens</td>
+            <td><input type="text" name="fri_20mpoint" size="3" /></td>
+            <td><input type="text" name="sat_20mpoint" size="3" /></td>
+            <td><input type="text" name="sun_20mpoint" size="3" /></td>
+        </tr>
+        </table>
+    </div>
+
+    <br/> <br/>
+    When will your department need its cash/MPoints in the morning? <br/>
+    <table style="width:auto">
+    <tr>
+        <td>Friday:</td>
+        <td><input type="text" name="fri_start_time" /></td>
+    </tr>
+    <tr>
+        <td>Saturday:</td>
+        <td><input type="text" name="sat_start_time" /></td>
+    </tr>
+    <tr>
+        <td>Sunday:</td>
+        <td><input type="text" name="sun_start_time" /></td>
+    </tr>
+    </table>
+
+    <br/> <br/>
+    When will your department close for the night and no longer need cash? <br/>
+    <input type="text" name="close_time" />
+
+    <br/> <br/>
+    Any other comments? <br/>
+    <textarea rows="5" cols="80" name="comments"></textarea>
+
+    <br/> <br/>
+    Notes:
+    <ul>
+        <li>
+            If we see a significant difference between cash or MPoint requests between here and last year's 
+            usage, then we will contact you to discuss the difference.
+        </li>
+        <li>
+            Answers here are not firm.  They will be a basis for final determination along with resource availability
+            and overall need.  For example, if there are shift conflicts, registration will probably take priority.
+        </li>
+    </ul>
+</div>
+<br/>
+<input type="submit" name="submitted" value="Submit Treasury Needs" />
+</form>
+
+{% endblock %}
