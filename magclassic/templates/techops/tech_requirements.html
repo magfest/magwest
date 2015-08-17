@@ -1,0 +1,16 @@
+{% extends "base-admin.html" %}
+{% block title %}Department Checklist - Tech Ops{% endblock %}
+{% block content %}
+
+<h2>Tech Requirements</h2>
+
+<h3><a href="https://docs.google.com/forms/d/1u_VysbvSepXZ_W6IHUSGtYpo4lWxpN7XIwFaEXU97Dw/viewform">MAGClassic 2015 Tech Requirements Form</a></h3>
+
+<form method="post" action="tech_requirements">
+{% csrf_token %}
+Once you've filled out the form above, or if you don't need any equipment for your department, please click the button below.<br/>
+<br/>
+<input type="submit" name="submitted" value="I Have Filled out the Tech Requirements Form" />
+</form>
+
+{% endblock %}
