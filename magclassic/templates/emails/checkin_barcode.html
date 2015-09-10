@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body>
+
+{{ attendee.first_name }},
+
+<br/><br/>{{ c.EVENT_NAME_AND_YEAR }} is approaching, and we're trying something new this year! In an effort to help ensure that
+you get your badge quickly and easily, we ask that you print out this barcode and bring it with you to the registration desk.
+
+<br/><br/><strong>This barcode does not replace your Photo ID.</strong> Please make sure you bring your photo ID with you as well.
+
+<br/><br/><img alt="Check-In Barcode" src="http://api-bwipjs.rhcloud.com/?bcid=azteccode&text={{ c.URL_BASE }}/registration/form?id={{ attendee.id }}">
+
+</body>
+</html>
