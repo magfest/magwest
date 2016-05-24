@@ -1,12 +1,12 @@
 {{ attendee.first_name }},
 
-Thanks for signing up to volunteer at MAGClassic!  You're currently assigned to the {{ attendee.assigned_depts_labels|join_and }} department{{ attendee.assigned_depts_labels|length|pluralize }}, but let us know if you'd also like to work in any other departments.
+Thanks for signing up to volunteer at {{ c.EVENT_NAME }}!  You're currently assigned to the {{ attendee.assigned_depts_labels|join_and }} department{{ attendee.assigned_depts_labels|length|pluralize }}, but let us know if you'd also like to work in any other departments.
 
-You can complete the MagClassic volunteer checklist at:
+You can complete the {{ c.EVENT_NAME }} volunteer checklist at:
 {{ c.URL_BASE }}/signups/login
 
 This checklist includes: 
-- Confirming that you are coming to MAGClassic.
+- Confirming that you are coming to {{ c.EVENT_NAME }}.
 - Any food restrictions you might have for our Staff Suite
 - Your t-shirt size for our merchandise department{% if attendee.hotel_eligible %}
 - Hotel room request (nights and roommate request){% endif %}
@@ -14,7 +14,7 @@ This checklist includes:
 
 If you have trouble logging in, you can verify/update your personal information at {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
 
-You can add / drop / change your shifts anytime until 11:59pm on Tuesday, September 8th.
+You can add / drop / change your shifts anytime until 11:59pm on Sunday, September 4th.
 
 Please let us know if you have any questions.
 
@@ -22,5 +22,3 @@ Thank You,
 Stops@magfest.org
 Staff Operations: MAGFest Inc.
 http://www.magfest.org
-
-{% if attendee.ribbon == c.DEPT_HEAD_RIBBON %}PS: Since you're a department head, you might not need to sign up for shifts, but you WILL need to fill out the rest of the checklist!{% endif %}
