@@ -1,5 +1,9 @@
 from magclassic import *
 
+# With "MAGFest Laboratories" as a new event, we find that the phrasing "Staffing again"
+# doesn't differentiate this event, so we remove it.
+AutomatedEmail.instances['Want to staff {}?'.format(c.EVENT_NAME)] = AutomatedEmail.instances.pop('Want to staff {} again?'.format(c.EVENT_NAME))
+
 AutomatedEmail(Attendee, 'MAGFest food for guests', 'guest_food_restrictions.txt',
            lambda a: a.badge_type == c.GUEST_BADGE,
            sender="MAGFest Staff Suite <chefs@magfest.org>")
