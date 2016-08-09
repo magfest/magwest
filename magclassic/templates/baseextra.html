@@ -1,0 +1,8 @@
+{% if c.PAGE_PATH == '/signups/food_restrictions' %}
+    <script type="text/javascript">
+    // Hide sandwich preferences, since we don't need to collect them for MAGLabs.
+    // We check all the boxes to bypass a validation in the main codebase.
+    $("#sandwich_prefs").hide();
+    $("input[name='sandwich_pref']").prop('checked', true);
+    </script>
+{% endif %}
