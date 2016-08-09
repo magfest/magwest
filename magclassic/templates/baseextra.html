@@ -1,0 +1,6 @@
+{% if c.PAGE_PATH == '/signups/food_restrictions' %}
+    <script type="text/javascript">
+    $("#sandwich_prefs").hide();
+    $("input[name='sandwich_pref']").prop('checked', true);
+    </script>
+{% endif %}
