@@ -4,4 +4,5 @@ Thanks for coming out to {{ c.EVENT_NAME }} as a Guest!  Since our Staff Food Su
 
 Please fill out that form even if you have no dietary restrictions, since that helps us tell the difference between people with no restrictions and people who just haven't filled out the form yet.
 
-{{ c.PEGLEGS_EMAIL_SIGNATURE }}
+MAGFest Staff Suite
+chefs@magfest.org
