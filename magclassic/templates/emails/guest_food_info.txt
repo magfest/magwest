@@ -1,15 +1,17 @@
 {{ attendee.first_name }},
 
-Thanks again for coming out to {{ c.EVENT_NAME }} as a Guest! As we've previously mentioned, we feed our guests three meals per day during {{ c.EVENT_NAME }}, so you can drop by the Staff Suite in the Retreat building on the 3rd floor in Retreat I (across the hall from Room 324) for food during any of the following times:
+Thanks again for coming out to {{ c.EVENT_NAME }} as a Guest! As we've previously mentioned, we feed our guests hot meals during {{ c.EVENT_NAME }}, so you can drop by the Staff Suite in the Retreat building on the 3rd floor in Retreat I (across the hall from Room 324) for hot food during any of the following times:
 
-Breakfast: 7:00 am to 11:00 am
-Lunch: 12:00 pm to 4:00 pm
-Dinner: 5:00 pm to 9:00 pm
-Overnight: 9:00 pm to 4:00 am (or until the hot food has run out, whichever occurs first)
+Breakfast: 8:00 am to 12:00 pm
+Dinner & Overnight: 4:00 pm to 4:00 am (or until the hot food has run out, whichever occurs first)
 
-The first meal served will be breakfast on Friday morning, and the suite will remain open through Sunday afternoon. Sunday will have a breakfast option, but once breakfast is over, leftovers will be served. You will be able to help yourself. Please feel free to bring tupperware or storage bags to carry items home. You will be responsible for their proper storage.
+Between meals, the suite will be open for snacks and beverages.
 
-Meal schedule, menu, and suite rules can all be found at http://magsuite.jennytru.com/.
+The first meal served will be breakfast on Friday morning, and the suite will remain open through Sunday afternoon.
+
+If necessary food may be taken to go, but we cannot allow to go meals to be picked up for those who are not present to ensure we do not run out of food. Also, please keep in mind that the Staff Suite is restricted to guest, staff, and volunteers only. Regular attendees are not eligible for access to the room. 
+
+The menu for the weekend can be found at http://magfe.st/labs/menu.
 
 Don't forget to fill out your food restrictions. Please let us know if you have any questions.
 
