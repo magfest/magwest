@@ -1,6 +1,6 @@
 from uber.common import *
-from magclassic._version import __version__
-from magclassic.automated_emails import *
+from magwest._version import __version__
+from magwest.automated_emails import *
 
 config = parse_config(__file__)
 mount_site_sections(config['module_root'])
