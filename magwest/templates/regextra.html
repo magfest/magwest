@@ -1,0 +1,5 @@
+{% if c.PAGE_PATH != 'registration/form' %}
+    <script type="text/javascript">
+        $.field('amount_extra').parents('.form-group').hide();
+    </script>
+{% endif %}
