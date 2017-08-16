@@ -1,0 +1,43 @@
+<html>
+<head></head>
+<body>
+
+{{ attendee.first_name }},
+<br/> <br/>
+
+You are receiving this email because you ticked an interest in <i>PC Gaming</i>
+(LAN) while pre-registering for {{ c.EVENT_NAME }}. We have a quick survey for
+those interested in BYOC to help us make sure we have things dialed in for
+opening day.
+<br /><br />
+<b><u>SURVEY</u></b>
+<br /><br />
+<a href="https://goo.gl/forms/DAzL6PO4OuVAeqAf2">https://goo.gl/forms/DAzL6PO4OuVAeqAf2</a>
+<br /><br />
+We'll send out a second email right before the event for those that have fill
+out the survey, with all the final details including a tournament list.
+<br/> <br/>
+<b><u>WANT TO HELP?</u></b>
+<br/> <br/>
+We're always looking for new staffers and volunteers to help us run the PC
+Gaming areas. Got experience in commentating live games? Want to help set up
+the network prior to the event starting? Want to run a few tournaments? Let us
+know! Email us at lan@magwest.org and tell us you’d like to help out!
+<br/><br/>
+Also, If you have a spare PC and would like to let us borrow it for public
+play, we'd be super appreciative. Contact us at lan@magwest.org and we'll hook
+you up with the deets (and maybe more).
+<br/> <br/> <hr/> <br/> <br/>
+
+Feel free to to send us an e-mail at lan@magwest.org with any questions,
+comments or concerns.
+<br/> <br/>
+Thank you again for having interest in the {{ c.EVENT_NAME }} LAN room and
+we'll see you on {{ c.EPOCH|datetime_local("%B %e, %Y") }}!
+<br/> <br/>
+With love, <br/>
+{{ c.EVENT_NAME }} LAN Staff</br>
+{{ event_dates() }} - {{ c.EVENT_NAME }} {{ c.EVENT_YEAR }} BYOC LAN / PC Gaming Room
+
+</body>
+</html>
