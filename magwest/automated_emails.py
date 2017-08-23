@@ -29,3 +29,8 @@ AutomatedEmail(Attendee, '{EVENT_NAME} PC Gaming Survey', 'pc_gaming_survey.html
            ident='pc_gaming_survey',
            needs_approval=True,
            sender="MAGWest LAN Staff <lan@magwest.org>")
+
+StopsEmail('CORRECTION to the {EVENT_NAME} {EVENT_DATE} Shift Schedule Email', 'shifts/schedule_correction.html',
+           lambda a: c.SHIFTS_CREATED and a.weighted_hours,
+           when=days_before(1, c.FINAL_EMAIL_DEADLINE),
+           ident='volunteer_shift_schedule_correction')
