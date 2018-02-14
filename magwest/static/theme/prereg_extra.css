@@ -1,3 +1,73 @@
 .masthead {
-    padding-top: 32.02%;  /* The height is 32.02% of the width (260px / 812px) */
+    width: 100%;
+    padding-top: 7.4%;
+    background-image: none;
+
+    position: relative;
+}
+
+.masthead::after {
+    content: "";
+    width: 100%;
+    padding-top: 60%;  /* The height is 60% of the width (60% * 810px == 486px) */
+
+    background-image: url("../theme/banner.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 100%;
+
+    position: absolute;
+    top: 133%;
+    z-index: 10001;
+}
+
+body {
+    color: #000;
+    background-color: GhostWhite;
+    background-image: url("../theme/background.jpg");
+
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center
+}
+
+.masthead + .panel {
+    background-color: rgba(234, 222, 221, 0.9);
+    border-radius: 0;
+    border: solid transparent none;
+}
+
+.masthead + .panel > .panel-body {
+    padding-top: 65%;
+}
+
+.help-block,
+.bs-wizard > .bs-wizard-step .bs-wizard-info {
+    color: #606060;
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
+    background-color: #fff;
+}
+
+.progress {
+    background-color: #fff;
+    background-image: none;
+    filter: none;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: rgba(250, 250, 250, 0.6);
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    border-top: none solid transparent;
 }
