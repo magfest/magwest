@@ -1,0 +1,14 @@
+{% extends "guests/band_agreement.html" %}
+
+{% block band_text_merch_inner %}
+  On the night of the performance, table space will be provided immediately outside the concert hall for
+  merchandise sales and signings.
+{% endblock %}
+
+{% block band_text_timer %}
+  {{ super() }}
+  <br><br>
+  Audio and/or video of the performer's performance may be recorded and redistributed per the
+  <a href="http://magwest.org/code-of-conduct/">Code of Conduct</a>. The performer may request the multi-track
+  audio of their own performance, as recorded from the sound board, and it will be provided if it is available.
+{% endblock band_text_timer %}
