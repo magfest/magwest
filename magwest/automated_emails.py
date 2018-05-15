@@ -1,4 +1,4 @@
-from uber.automated_emails import AutomatedEmailFixture, StopsEmailFixture
+from uber.automated_emails import AutomatedEmailFixture, BandEmailFixture, StopsEmailFixture
 from uber.config import c
 from uber.models import Attendee
 from uber.utils import days_before
@@ -50,3 +50,10 @@ StopsEmailFixture(
     lambda a: c.SHIFTS_CREATED and a.weighted_hours,
     when=days_before(1, c.FINAL_EMAIL_DEADLINE),
     ident='volunteer_shift_schedule_correction')
+
+BandEmailFixture(
+    'Important {EVENT_NAME} performer deadlines have changed!',
+    'band_deadline_updates.html',
+    lambda g: True,
+    ident='band_deadline_updates',
+    needs_approval=True)
