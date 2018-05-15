@@ -1,7 +1,9 @@
+from datetime import timedelta
+
 from uber.automated_emails import AutomatedEmailFixture, BandEmailFixture, StopsEmailFixture
 from uber.config import c
 from uber.models import Attendee
-from uber.utils import days_before
+from uber.utils import before, days_before
 
 
 AutomatedEmailFixture(
@@ -55,5 +57,6 @@ BandEmailFixture(
     'Important {EVENT_NAME} performer deadlines have changed!',
     'band_deadline_updates.html',
     lambda g: True,
+    when=before(max(c.BAND_BIO_DEADLINE, c.BAND_STAGE_PLOT_DEADLINE) - timedelta(days=1)),
     ident='band_deadline_updates',
     needs_approval=True)
