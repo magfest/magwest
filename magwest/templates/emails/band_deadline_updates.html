@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <p>
+      Hey {{ guest.group.name }}!
+    </p>
+    <p>
+      Some important deadlines have changed, and we wanted to make sure you
+      were aware of the what, when, and why.
+    </p>
+    <p>
+      The "Announcement Information" deadline is being brought closer, to
+      {{ c.BAND_BIO_DEADLINE|datetime_local('%B %-d') }}. We're doing this
+      because the bulk of bands have been booked for the event, and we would
+      like to get started on creating and circulating promotional material.
+    </p>
+    <p>
+      The "Stage Layouts & Tech Requests" deadline is also being brought
+      closer, to {{ c.BAND_STAGE_PLOT_DEADLINE|datetime_local('%B %-d') }},
+      for much the same reason. Practically all of the bands have been booked,
+      and we want to get started on the process of getting competitive bids in
+      for the equipment we'll need to supply.
+    </p>
+    <p>
+      Your band's checklist can be found at the following link:<br>
+      <a href="{{ c.URL_BASE }}/guests/index?id={{ guest.id }}">
+        Band Checklist for {{ guest.group.name }}
+      </a>
+    </p>
+    <p>
+      Please, if you have any concerns or issues, feel welcome to reach out
+      to {{ c.BAND_EMAIL }}.
+    </p>
+    <p>
+      Thank you for your understanding,<br>
+      {{ c.BAND_EMAIL_SIGNATURE }}
+    </p>
+  </body>
+</html>
