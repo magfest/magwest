@@ -1,10 +1,10 @@
 {{ attendee.first_name }},
 
-Thanks so much for helping run MAGWest last year, we couldn't have pulled it off without so much help from our wonderful volunteers.  We are attempting something new with this years event called: {{ c.EVENT_NAME }}, and this year it's happening {{ c.EPOCH|datetime_local("%b %e") }} - {{ c.ESCHATON|datetime_local("%e") }}!  As thanks for your help last time, you're eligible for a complementary {{ c.EVENT_NAME }} Staff badge, which you can accept by visiting {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
+Thanks so much for helping run MAGWest last year--we couldn't have pulled it off without so much help from our wonderful volunteers. Prep for {{ c.EVENT_NAME }} is already underway, and this year it's happening {{ c.EPOCH|datetime_local("%b %e") }} - {{ c.ESCHATON|datetime_local("%e") }} at {{ c.EVENT_VENUE }}! As thanks for your help last time, you're eligible for a complimentary {{ c.EVENT_NAME }} Staff badge, which you can accept by visiting {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
 
-After you accept your Staff badge, you'll be emailed when shifts become available.  Also, as a proven staffer, you'll also be eligible for complementary crash space in one of our staffer hotel rooms.  You'll be emailed closer to {{ c.EVENT_NAME }} with details about how to sign up for this.
+After you accept your badge, you'll be emailed when shifts become available. Also, as a returning volunteer you can request space in our staff hotel room block. You'll be emailed closer to {{ c.EVENT_NAME }} with details about how to do so.
 
-If you want to come to {{ c.EVENT_NAME }} but don't want to volunteer again, just let us know and we'll swap your Staff badge for a complementary Attendee badge as thanks for the hard work you put in last time.
+If you want to come to {{ c.EVENT_NAME }} but don't want to volunteer again, just let us know and we'll swap your Staff badge for a complimentary Attendee badge instead.
 
 Please let us know if you have any questions.
 
