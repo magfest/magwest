@@ -10,7 +10,7 @@
   {% if c.CONSENT_FORM_URL %}
     <li> Attendees under 18 MUST bring a <a href="http://www.magfest.org/parentalconsentform" target="_blank">signed parental consent form</a>, which MUST be notarized if the parent is not with the minor when the badge is picked up. Also, a{% else %}<li>All children 12 and under will need to be accompanied by an adult with a paid badge. </li>
   {% endif %}
-  {% if c.DEALER_REG_START and attendee.is_dealer %}
+  {% if c.DEALER_REG_START and attendee and attendee.is_dealer %}
     <li> Submitting this form as a Dealer does not guarantee you will be selected for the Dealers Room - it is only the application. </li>
   {% endif %}
 </ul>
