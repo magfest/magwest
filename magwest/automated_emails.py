@@ -12,7 +12,7 @@ AutomatedEmailFixture(
     'guest_food_restrictions.txt',
     lambda a: a.badge_type == c.GUEST_BADGE,
     ident='magwest_guest_food_restrictions',
-    sender="MAGFest Staff Suite <chefs@magfest.org>")
+    sender="MAGWest Tea Room <tearoom@magwest.org>")
 
 AutomatedEmailFixture(
     Attendee,
@@ -20,7 +20,7 @@ AutomatedEmailFixture(
     'guest_food_info.txt',
     lambda a: a.badge_type == c.GUEST_BADGE,
     ident='magwest_guest_food_info',
-    sender="MAGFest Staff Suite <chefs@magfest.org>")
+    sender="MAGWest Tea Room <tearoom@magwest.org>")
 
 AutomatedEmailFixture(
     Attendee,
@@ -28,7 +28,7 @@ AutomatedEmailFixture(
     'volunteer_food_info.txt',
     lambda a: a.staffing and days_before(7, c.FINAL_EMAIL_DEADLINE),
     ident='magwest_volunteer_food_info',
-    sender="MAGFest Staff Suite <chefs@magfest.org>")
+    sender="MAGWest Tea Room <tearoom@magwest.org>")
 
 AutomatedEmailFixture(
     Attendee,
