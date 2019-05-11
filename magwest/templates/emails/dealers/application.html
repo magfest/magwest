@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+
+Your group ({{ group.name }}) has successfully submitted a Dealer application for {{ c.EVENT_NAME }}
+this coming {{ event_dates() }}. Below is a copy of your application. You may
+<a href="{{ c.URL_BASE }}/preregistration/group_members?id={{ group.id }}">update it here</a> or
+<a href="{{ c.URL_BASE }}/preregistration/confirm?id={{ group.leader.id }}">view your badge here</a>.
+<ul>
+    <li><strong>Dealer Table Name</strong>: {{ group.name }}</li>
+    <li><strong>Tables</strong>: {{ group.tables }} table{{ group.tables|pluralize }} (${{ group.table_cost|round(2) }}) </li>
+    <li><strong>Badges</strong>: {{ group.badges }} badge{{ group.badges|pluralize }} (${{ group.badge_cost|round(2) }}) </li>
+    <li><strong>Total Price</strong> ${{ group.cost }}</li>
+    <li><strong>What do you sell?</strong> {{ group.wares }}</li>
+    <li><strong>Description</strong>: {{ group.description }}</li>
+    {% if group.special_needs %}<li><strong>Table Requests and Special Requests</strong>: {{ group.special_needs }}</li>{% endif %}
+    <li><strong>Website URL</strong>: {{ group.website }}</li>
+    <li><strong>Address</strong>: {{ group.address1 }}{% if group.address2 %}, {{ group.address2 }}{% endif %}
+    <br/> {{ group.city }}, {{ group.region }} {{ group.zip_code }} ({{ group.country }})</li>
+</ul>
+
+{% if c.DEALER_REG_SOFT_CLOSED %}
+Because our marketplace is currently full, your submission has been automatically placed on our waitlist.  We'll let you know whether or not
+your application is later approved.
+{% else %}
+We will review your request and provide you with a payment link if your application is approved; otherwise,
+you will receive a waitlist or declined email.
+{% endif %}
+
+<br/><br/>Vendor applications automatically reserve the ability to purchase badges for you and the number of assistants on the
+application at the lowest possible pre-registration price available at the date of this application based on available promo codes, 
+if this application is not approved. PLEASE DO NOT BUY A BADGE IF YOU APPLIED FOR A MARKETPLACE SPOT. You will be able to purchase
+badges after a determination has been made on your application. 
+
+{% if group.requested_hotel_info and c.PREREG_REQUEST_HOTEL_INFO_OPEN -%}
+    <br/> <br/>
+    {% include "preregistration/hotel_disclaimer.html" %}
+{%- endif %}
+
+<br/> <br/> <u>Dealer Rules and Information</u>
+{% include "static_views/dealerRules.html" %}
+
+</body>
+</html>
