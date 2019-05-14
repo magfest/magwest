@@ -1,0 +1,33 @@
+{% extends "guest_checklist/stage_plot_deadline.html" %}
+{% block deadline_text %}
+    We require that you upload an exact description of your desired stage layout.
+    Also include any needed extra rental requests, set lists, information regarding
+    video/visuals, etc...
+    <br/></br>
+    An "exact description" should include for each piece of equipment to go on stage:
+    <ul>
+      <li>If the act intends to supply it, or if the act is requesting the equipment from backline,</li>
+      <li>The type (e.g., 3.5" stereo jack, RCA plug, XLR) and count of each input to be connected to the house mixer,</li>
+      <li>The position/orientation of the equipment</li>
+    </ul>
+
+    Remember to indicate mic stands and monitors. A miked drum kit will be provided as
+    backline, and may remain on stage even for acts that do not make use of it.
+
+    <br/></br>
+    Failure to provide exact stage directions may result in you not receiving the setup you expect or want.
+{% endblock %}
+
+{% block form_desc %}
+    {% if guest.stage_plot_status %}
+        <a href="{{ guest.stage_plot.url }}">Click here to view the stage layouts you uploaded.</a>
+        <br/><br/>
+        Need to update something?
+    {% endif %}
+
+    Please upload your desired stage layouts. Also include any needed extra rental
+    requests, set lists, information regarding video/visuals, etc...
+    <br/><br/>
+    This can be in the form of written directions, an image, PDF, or a zipfile
+    containing a collection of files explaining what you need.
+{% endblock %}
