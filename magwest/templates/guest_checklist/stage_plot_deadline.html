@@ -1,5 +1,16 @@
 {% extends "guest_checklist/stage_plot_deadline.html" %}
 {% block deadline_text %}
+    Please upload an exact description of your desired stage layout.
+    Also include any needed extra rental requests, set lists, information regarding
+    video/visuals, etc...
+{% endblock %}
+
+{% block form_desc %}
+    {% if guest.stage_plot_status %}
+        <a href="{{ guest.stage_plot.url }}">Click here to view the stage layouts you uploaded.</a>
+        <br/><br/>
+        Need to update something?
+    {% endif %}
     We require that you upload an exact description of your desired stage layout.
     Also include any needed extra rental requests, set lists, information regarding
     video/visuals, etc...
@@ -16,18 +27,4 @@
 
     <br/></br>
     Failure to provide exact stage directions may result in you not receiving the setup you expect or want.
-{% endblock %}
-
-{% block form_desc %}
-    {% if guest.stage_plot_status %}
-        <a href="{{ guest.stage_plot.url }}">Click here to view the stage layouts you uploaded.</a>
-        <br/><br/>
-        Need to update something?
-    {% endif %}
-
-    Please upload your desired stage layouts. Also include any needed extra rental
-    requests, set lists, information regarding video/visuals, etc...
-    <br/><br/>
-    This can be in the form of written directions, an image, PDF, or a zipfile
-    containing a collection of files explaining what you need.
 {% endblock %}
