@@ -13,8 +13,9 @@
     {% if group.status == c.WAITLISTED %}
         Since the Marketplace is currently full, you've been added to our waitlist, and we'll let you know if a spot opens up for you.
     {% else %}
-        We receive a flood of applications every year, so application processing takes a considerable amount of time.
-        Approvals will be done as promptly as possible; usually no later than <strong>two months</strong> before the event.
+      We anticipate receiving many applications this year, and application processing take a considerable amount of time.
+      Approvals will be sent as promptly as possible, and you will hear back no later than <strong>two months</strong> before the event.
+      If you have not heard back by this time, you may email {{ c.MARKETPLACE_EMAIL|email_only|email_to_link }} to inquire about your application status.
     {% endif %}
 
     <h3>What Happens Next</h3>
