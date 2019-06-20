@@ -1,0 +1,13 @@
+{% import 'macros.html' as macros %}
+
+{% if attendee.takes_shifts %}
+    <li>
+        {{ macros.checklist_image(attendee.shifts) }}
+        {% if attendee.shift_prereqs_complete %}
+            <a href="shifts">Sign up</a>
+        {% else %}
+            Sign up
+        {% endif %}
+        for shifts. (Deadline: September 4, 2019)
+    </li>
+{% endif %}
