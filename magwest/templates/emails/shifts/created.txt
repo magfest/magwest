@@ -7,10 +7,13 @@ You can complete the {{ c.EVENT_NAME }} volunteer checklist at:
 
 This checklist includes:
 - Confirming that you are coming to {{ c.EVENT_NAME }}.
-- Any food restrictions you might have for our Staff Suite
-- Your t-shirt size for our merchandise department{% if attendee.hotel_eligible %}
-- Hotel room request (nights and roommate request){% endif %}
+- Any food restrictions you might have for any sponsored meals.
+- Your t-shirt size for our merchandise department.
+{% if attendee.hotel_eligible %}
+- Hotel room request (nights and roommate request).
+{% endif %}
 - Shift signup information.
+- Agreeing to our Volunteer Agreement.
 
 If you need to, you can verify/update your personal information at {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
 
