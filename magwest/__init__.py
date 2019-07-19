@@ -15,3 +15,4 @@ template_overrides(join(config['module_root'], 'templates'))
 
 # These need to come last so they can make use of config properties
 from magwest.automated_emails import *  # noqa: F401,E402,F403
+from magwest.models import *  # noqa: F401,E402,F403

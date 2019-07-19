@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% set admin_area=True %}
+{% block title %}Shirt Size{% endblock %}
+{% block backlink %}{% endblock %}
+{% block content %}
+
+<form method="post" action="shirt_size">
+{{ csrf_token() }}
+
+<h2> Tell Us Your Shirt Size </h2>
+
+<p>One of the perks of volunteering is a tshirt for anyone who takes at least {{ c.HOURS_FOR_SHIRT }} weighted hours worth of shifts.</p>
+
+{% if c.STAFF_EVENT_SHIRT_OPTS %}
+    <p>
+    Please select below if you prefer a generic {{ c.EVENT_NAME }}-branded shirt, or an event shirt specific to {{ c.EVENT_NAME_AND_YEAR }}.
+    <br/><select name="num_event_shirts">
+      {{ options(c.STAFF_EVENT_SHIRT_OPTS, attendee.num_event_shirts) }}
+    </select>
+    </p>
+{% endif %}
+<p>
+    <select name="shirt">
+        {{ options(opts, attendee.shirt) }}
+    </select>
+    <input type="submit" value="Save" />
+</p>
+</form>
+
+{% endblock %}
