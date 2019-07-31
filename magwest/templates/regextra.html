@@ -3,10 +3,10 @@
             window.BADGE_TYPES.options[0].description = 'Allows access to the festival for its duration ({{ c.EPOCH|datetime_local("%b %-d") }}-{{ c.ESCHATON|datetime_local("%b %-d") }}). {{ price_notice("Preregistration",c.PREREG_TAKEDOWN) }}';
         }
     $(function() {
-        if ($("#badge-types").size()) {
+        if ($("#badge-types") && $("#badge-types").size()) {
             $("#badge-types").hide();
         }
-        if ($.field('badge_printed_name').size()) {
+        if ($.field('badge_printed_name') && $.field('badge_printed_name').size()) {
             $.field('badge_printed_name').parents('.form-group').remove();
         }
     })
