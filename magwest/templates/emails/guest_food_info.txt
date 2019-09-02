@@ -1,17 +1,14 @@
 {{ attendee.first_name }},
-Thanks again for coming out to {{ c.EVENT_NAME }} as a Guest! As we've previously mentioned, we feed our guests three meals per day during {{ c.EVENT_NAME }}, so you can drop by the Hospitality Suite in Room 5217 on the 5th floor of the hotel for snacks at any time and for food during any of the following times:
+Thanks again for coming out to {{ c.EVENT_NAME }} as a Guest! We have limited meals and snacks available during {{ c.EVENT_NAME }}, so you can drop by the Tea Room or Staff Suite in the San Simeon or San Martin rooms located in the staff only area behind the panels rooms at anytime during {{ c.EVENT_NAME }} for a snack or drink. 
 
-Breakfast: 8:00 am to 11:00 am
-Lunch: 12:00 pm to 3:00 pm
-Dinner: 5:00 pm to 9:00 pm
-SUITE IS OPEN 24/7 WITH SNACKS & GRAB AND GO
+Catered meals will be served at the following times in the Staff Suite (San Martin):
+Breakfast: 11:00 am
+Dinner: 5:00 pm
+These meals are served first-come first-served and in limited quantity.
 
-The first meal served will be breakfast on Thursday morning, and the suite will remain open through Sunday afternoon. Sunday will have a breakfast option, but once breakfast is over, leftovers will be served. You will be able to help yourself. Please feel free to bring tupperware or storage bags to carry items home. You will be responsible for their proper storage.
-
-Meal schedule, menu, and suite rules can all be found at staffsuite.magfe.st
+Snacks, tea, and small meals are available 24/7 in the Tea Room (San Simeon).
 
 Please let us know if you have any questions.
 
-MAGFest Staff Suite
-chefs@magfest.org
-staffsuite.magfe.st
+MAGWest Staff Suite
+tearoom@magwest.org
