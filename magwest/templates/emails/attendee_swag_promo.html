@@ -163,10 +163,10 @@ BT was here and fixed variables; hopefully this is all set? -->
                                             <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
                                               
                                               <p>
-                                                <strong>Hey there {{ attendee.first_name}}!</strong>
+                                                <strong>Hey there {{ attendee.first_name }}!</strong>
                                               </p>
 <p>
-Thank you so much for registering to attend {{ c.EVENT_NAME }} {{ c.EVENT_YEAR }}!<br><br>
+Thank you so much for registering to attend {{ c.EVENT_NAME_AND_YEAR }}!<br><br>
 
 When you registered, you had the option to also pre-order extra swag items, most of which are typically offered exclusively during pre-registration. This year, we're letting you order as long as supplies last! If you've already purchased something, you can check out what you've got so far upgrade your swag tier if you'd like using this
     <a href="{{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}">personalized registration update link</a>.
