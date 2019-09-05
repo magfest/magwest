@@ -52,3 +52,12 @@ StopsEmailFixture(
     lambda a: c.SHIFTS_CREATED and a.weighted_hours,
     when=days_before(1, c.FINAL_EMAIL_DEADLINE),
     ident='volunteer_shift_schedule_correction')
+
+AutomatedEmailFixture(
+    Attendee,
+    'Last Chance for MAGWest {EVENT_YEAR} bonus swag!',
+    'attendee_swag_promo.html',
+    lambda a: a.can_spam and a.badge_status == c.COMPLETED_STATUS and a.amount_extra < c.SEASON_LEVEL,
+    when=days_before(2, c.EPOCH),
+    sender='MAGWest Merch Team <merch@magwest.org>',
+    ident='magwest_bonus_swag_reminder_last_chance')
