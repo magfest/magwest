@@ -57,7 +57,8 @@ AutomatedEmailFixture(
     Attendee,
     'Last Chance for MAGWest {EVENT_YEAR} bonus swag!',
     'attendee_swag_promo.html',
-    lambda a: a.can_spam and a.badge_status == c.COMPLETED_STATUS and a.amount_extra < c.SEASON_LEVEL,
+    lambda a: a.can_spam and a.badge_status == c.COMPLETED_STATUS and
+              a.amount_extra < c.SEASON_LEVEL and days_after(1, a.registered)(),
     when=days_before(2, c.EPOCH),
     sender='MAGWest Merch Team <merch@magwest.org>',
     ident='magwest_bonus_swag_reminder_last_chance')
