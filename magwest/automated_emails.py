@@ -3,7 +3,7 @@ from datetime import timedelta
 from uber.automated_emails import AutomatedEmailFixture, BandEmailFixture, StopsEmailFixture
 from uber.config import c
 from uber.models import Attendee
-from uber.utils import before, days_before
+from uber.utils import before, days_before, days_after
 
 
 AutomatedEmailFixture(
