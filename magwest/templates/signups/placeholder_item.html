@@ -3,10 +3,10 @@
 <li>
     {{ macros.checklist_image(not attendee.placeholder) }}
     {% if attendee.placeholder %}
-        <a href="../preregistration/confirm?return_to=../signups/index&id={{ attendee.id }}">Confirm</a>
+        <a href="../preregistration/confirm?return_to=../staffing/index&id={{ attendee.id }}">Confirm</a>
     {% else %}
         Confirm
     {% endif %}
     you are coming to {{ c.EVENT_NAME }}. (Deadline: July 17, 2019)
-    {% if not attendee.placeholder %}(you can still <a href="../preregistration/confirm?return_to=../signups/index&id={{ attendee.id }}">edit your info</a>){% endif %}
+    {% if not attendee.placeholder %}(you can still <a href="../preregistration/confirm?return_to=../staffing/index&id={{ attendee.id }}">edit your info</a>){% endif %}
 </li>
