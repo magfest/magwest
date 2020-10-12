@@ -13,3 +13,5 @@ dist
 .coverage
 development.ini
 test.ini
+.history
+.DS_Store
