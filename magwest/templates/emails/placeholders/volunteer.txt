@@ -1,0 +1,9 @@
+{% if attendee.first_name %}{{ attendee.first_name }},
+
+{% endif %}Thanks for volunteering to help run {{ c.EVENT_NAME }}!  You've been added to our registration database, but we don't have all of your personal information.  To ensure that we can ship you the appropriate perks and have the right contact info, please fill out the rest of your info at {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}.
+
+After entering the rest of your information, we'll assign you to the appropriate department and you'll be able to sign up for shifts.
+
+Please let us know if you have any questions.
+
+{{ c.STOPS_EMAIL_SIGNATURE }}
