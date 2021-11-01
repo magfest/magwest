@@ -12,7 +12,7 @@ This checklist includes:
 
 If you need to, you can verify/update your personal information at {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
 
-You can add / drop / change your shifts anytime until 11:59pm on Sunday, September 27th.
+You can add / drop / change your shifts anytime until 11:59pm on Saturday, November 6th.
 
 Please let us know if you have any questions.
 
