@@ -5,6 +5,12 @@
 
 <h1>Volunteer Agreement</h1>
 
+<p><strong>
+This Volunteer Agreement has two sections; one is legal and the other is cultural. In the state of California, we're required by law to explain the exchange of perks for volunteer hours. Please note that "Provided Services" is where we'd typically say "volunteer".
+</strong></p>
+
+<p><strong>Beyond that, it's important to us that you understand volunteer expectations, as well as what you can expect from MAGFest. Read on!</strong></p>
+
 <p>
 This Volunteer Agreement (the "Agreement") is entered into by and between MAGFest, Inc. (the "Company"),
 and {{ attendee.full_name }} ("Volunteer"), and is effective as of {{ now()|datetime("%m/%d, %Y") }} (the "Effective Date").
@@ -23,17 +29,17 @@ Volunteer agrees that he/she will provide the following services, ("Services"), 
 (d) any other tasks requested by the Company.<br/>
 <br/>
 Volunteer agrees that he/she would like to provide the Services without compensation
-and wishes to contribute his/her time.  All costs and expenses incurred by Volunteer
+and wishes to contribute his/her time. All costs and expenses incurred by Volunteer
 in providing the Services shall be the responsibility of Volunteer,
 unless approved in writing in advance by the Company. </p>
 
 <p>
 <b>Perks.</b>
 Volunteer shall receive the following Perks determined by the amount of Services provided by the Volunteer::<br/>
-(a) a Volunteer that achieves eight (8) hours of Services will be entitled a {{ c.EVENT_NAME }} t-shirt;<br/>
+(a) a Volunteer that achieves eight (8) hours of Services will be entitled to a {{ c.EVENT_NAME }} t-shirt;<br/>
 (b) a Volunteer that achieves sixteen (16) hours of Services will be entitled to access to meals provided by the Company;<br/>
 (c) a Volunteer that achieves twenty-four (24) hours of Services will be entitled to reimbursement of the amount, if any, Volunteer paid for Volunteer's {{ c.EVENT_NAME }} badge; and<br/>
-(d) a Volunteer that achieves thirty (30) hours of Services at this {{ c.EVENT_NAME }} and provided Services at one of the Company's previous events will be entitled to shared space in one of the Company's staff hotel rooms for this {{ c.EVENT_NAME }}.<br/>
+(d) a Volunteer that achieves thirty (30) hours of Services at this {{ c.EVENT_NAME }} AND provided Services at one of the Company's previous events will be entitled to shared space in one of the Company's staff hotel rooms for this {{ c.EVENT_NAME }}.<br/>
 
 Other than the aforesaid amounts Volunteer acknowledges and agrees he/she is not entitled to any compensation of any type from {{ c.EVENT_NAME }}.</p>
 
@@ -75,16 +81,77 @@ which, when taken together, will constitute one Agreement.
 </p>
 
 {% if not attendee.agreed_to_volunteer_agreement %}
-    <form method="post" action="volunteer_agreement">
+    <label for="agreed_to_terms_1">
+        I agree to the terms of the volunteer agreement: <input type="checkbox" id="agreed_to_terms_1" name="agreed_to_terms_1" form="volunteer_agreement"{% if agreed_to_terms_1 %} checked="checked"{% endif %} />
+    </label>
+{% else %}
+    <p>You have accepted the terms of this agreement already.</p>
+{% endif %}
+<br/><br/>
+<p><strong>And here's the MAGFest Community Volunteer Agreement:</strong></p>
+
+<p>MAGFest depends on committed volunteers to make our events happen. We could not do this without you and we are so grateful for all you do and the community you have helped to create. To ensure that staff, volunteers, attendees, and guests have the best experience possible, we have developed the following agreement between volunteers and MAGFest, Inc.</p>
+
+<p>MAGFest, Inc. agrees to:
+    <ul>
+        <li>Be forthcoming with information as it pertains to event logistics and changes in policy.</li>
+        <li>Serve as the liaison between volunteers and employees when needed.</li>
+        <li>Provide a brief description of duties for positions open to volunteers.</li>
+        <li>Train and support volunteers where needed.</li>
+        <li>Provide volunteers with working conditions equal to those of paid employees doing similar work, including space, equipment and supplies.</li>
+        <li>Provide volunteers the opportunity to ask questions, communicate openly, and share any concerns.</li>
+        <li>Be responsible for the coordination, support, and termination (if necessary) of all volunteers.</li>
+    </ul>
+</p>
+
+<p>The Volunteer agrees to:
+    <ul>
+        <li>Meet the commitment required of chosen position. This includes being aware of pre-event duties or deadlines and completing them accordingly.</li>
+        <li>Become thoroughly familiar with MAGFest's <a href="https://super.magfest.org/codeofconduct/" target="_blank">Event Code of Conduct</a>, <a href="https://www.notion.so/Volunteer-Guidelines-Policies-e7a5c3abac144a96a98bf6586833f61d" target="_blank">Volunteer Guidelines and Policies</a>, and <a href="https://www.notion.so/Communications-Code-of-Conduct-cd27b6f1976d4685925cc7a2500e94ed" target="_blank">Communications Code of Conduct</a>.</li>
+        <li>Carry out duties in alignment with our <a href="https://www.notion.so/Mission-Core-Values-6656a5b2bf3340d183912f4db3211b00" target="_blank">Core Values</a>.</li>
+        <li>Work all shifts that they have signed up for, being present and prepared to work on time. If unable to work as scheduled, they will notify their department supervisor.</li>
+        <li>Seek the assistance of their immediate supervisor or DH in any situation requiring special guidance.</li>
+        <li>Provide feedback and suggestions to STOPS in order to increase the effectiveness of the program.</li>
+        <li>Accept the right of MAGFest, Inc. to dismiss any volunteer for poor performance, including poor attendance.</li>
+        <li>Notify MAGFest about any resignation, request for a leave of absence, or change of volunteer commitment.</li>
+
+    </ul>
+</p>
+
+<p><strong>Performance Problems and Disciplinary Actions</strong></p>
+
+<p>
+In general, volunteers can receive verbal or written warnings of unacceptable behavior or performance and are allowed time and support to improve.
+</p>
+
+<p>
+MAGFest supports an atmosphere of open discussion of issues between volunteers, staff, and employees. Should a volunteer take exception to a disciplinary action, they may discuss it with the head(s) of STOPS for their event. In the case that further arbitration is needed, the Director of Volunteer Infrastructure will have final say on disciplinary actions regarding volunteers.
+</p>
+
+<p>
+In instances of gross misconduct, warnings may not be possible or desirable for the overall interests of MAGFest, event attendees, or the community. Engaging in any of the following behaviors or actions will not be tolerated and may result in immediate termination of duties:    
+<ul>
+    <li>Physical assault or threat of violence to anyone involved with the event.</li>
+    <li>Theft (equipment, supplies, money).</li>
+    <li>Possession or use of a weapon.</li>
+    <li>Racial, sexual, or other harassment of anyone involved with the event.</li>
+    <li>Reckless or deliberate action that endangers the physical or psychological well-being of another person involved with the event.</li>
+    <li>Reckless or deliberate action that damages MAGFest property or property belonging to MAGFest partners.</li>
+    <li>Reckless or deliberate action which damages the reputation of MAGFest.</li>
+</ul>
+</p>
+
+{% if not attendee.agreed_to_volunteer_agreement %}
+    <form method="post" action="volunteer_agreement" id="volunteer_agreement">
         {{ csrf_token() }}
-        <label for="agreed_to_terms">
-          I agree to the terms of the volunteer agreement: <input type="checkbox" id="agreed_to_terms" name="agreed_to_terms" />
+        <label for="agreed_to_terms_2">
+          <input type="checkbox" id="agreed_to_terms_2" name="agreed_to_terms_2"{% if agreed_to_terms_2 %} checked="checked"{% endif %} /> I, {{ attendee.full_name }}, acknowledge that I have read the volunteering policies and guidelines. I understand the volunteer expectations, and I will fulfill them to the best of my ability. I understand that there may be consequences if I don't meet these expectations.
         </label>
         <br><br>
         <input class="btn btn-primary" type="submit" value="Save" />
     </form>
 {% else %}
-    <p>You have accepted the terms of this agreement already.</p>
+    <p>You have already acknowledged the volunteering policies and guidelines.</p>
 {% endif %}
 
 {% endblock %}
