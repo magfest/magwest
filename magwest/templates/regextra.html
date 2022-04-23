@@ -13,3 +13,101 @@
         {% endif %}
     })
 </script>
+
+{# Copied from Covid plugin #}
+<script type="text/javascript">
+    $(function () {
+        {% if not admin_area %}
+            //$('#attend_virtually').insertBefore('#bold-field-message');
+        {% endif %}
+    });
+</script>
+
+{% if not admin_area %}
+    <div class="form-group">
+    <div class="checkbox col-sm-9 col-sm-offset-3">
+        <label class="checkbox-label">
+        {{ macros.checkbox(attendee, 'agreed_to_covid_policies', is_readonly=read_only, clientside_bool=clientside_bool, is_required=True) }}
+        <strong>Yes</strong>, I acknowledge that I have read and agree to abide by the 
+        {{ macros.popup_link(c.COVID_POLICIES_URL, c.EVENT_NAME_AND_YEAR ~ " COVID Policies") }} 
+        in their entirety. I understand the <strong>vaccination and face covering requirements</strong> for all individuals, 
+        including minors. I will contact {{ "accessibility@magfest.org"|email_to_link }} if I require an exemption for 
+        medical reasons, or {{ "regsupport@magfest.org"|email_to_link }} if I have any other questions regarding exemptions.
+        </label>
+    </div>
+    </div>
+{% endif %}
+
+{% if false and attendee.paid != c.NEED_NOT_PAY and not attendee.checked_in and not attendee.amount_unpaid and attendee.badge_status == c.COMPLETED_STATUS and (admin_area or c.PAGE_PATH == '/preregistration/confirm') %}
+<div id="attend_virtually" class="alert alert-success">
+    <div class="form-group">
+        <label class="col-sm-3 control-label optional-field">Attend Virtually</label>
+        <div class="checkbox col-sm-6">
+            <label class="checkbox-label">
+            {{ macros.checkbox(attendee, 'donate_badge_cost', is_readonly=read_only, clientside_bool=clientside_bool) }}
+            <strong>Yes, I want to donate the cost of my badge to {{ c.ORGANIZATION_NAME }}.</strong> I understand that I will have my badge
+            <span id="and-merch">{% if attendee.amount_extra %}and kick-in merch {% endif %}</span> shipped to me and that I will receive a tracking number
+            by email before the end of January 2022.
+            </label>
+        </div>
+    </div>
+    {% if not c.COLLECT_FULL_ADDRESS %}
+    {%- set attendee_address_suffix = attendee.id|replace("-", "") -%}
+    <script type="text/javascript">
+        {% include "region_opts.html" %}
+        var setInternational = function () {
+            countryName = $.field('country').val();
+            if(countryName == 'United States') {
+                $.field('international').prop('checked', false);
+            } else if (countryName != '') {
+                $.field('international').prop('checked', true);
+            }
+        };
+        var showOrHideMailingAddress = function() {
+            if ($.field('donate_badge_cost') && $.field('donate_badge_cost').prop('checked')) {
+                $.field('zip_code').prop("disabled", true);
+                $.field('country').prop("disabled", false);
+                $('.address_details{{ attendee_address_suffix }} input').prop("disabled", false);
+                $.field('zip_code').parents('.form-group').hide();
+                $('.address_detailsc3130646a2964f598d6de045aec19011 input[name="zip_code"]').parents('.form-group').show();
+            } else {
+                $.field('zip_code').prop("disabled", false);
+                $.field('country').prop("disabled", true);
+                $('.address_details{{ attendee_address_suffix }} input').prop("disabled", true);
+                $.field('zip_code').parents('.form-group').show();
+            }
+            setVisible($('#merch_mailing_address'), $.field('donate_badge_cost').prop('checked'));
+            $('#hidden_region{{ attendee_address_suffix }}').prop("disabled", true);
+        };
+        var andMerchText = function() {
+            if ($.field('amount_extra') && $.val('amount_extra')) {
+                $('#and-merch').html('and kick-in merch ');
+            } else {
+                $('#and-merch').html('');
+            }
+        }
+        $(function() {
+            showOrHideMailingAddress();
+            $.field('donate_badge_cost').on('click', showOrHideMailingAddress);
+            $.field('amount_extra').on('change', andMerchText);
+        });
+    </script>
+    <div id="merch_mailing_address">
+    <div class="row"><label class="col-sm-6 col-sm-offset-3 address_details{{ attendee.id|replace('-', '') }}">Mailing Address</label></div>
+    {{ macros.address_form(attendee, update_international=True, is_required=(not admin_area)) }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if admin_area %}
+<div class="form-group">
+    <label for="covid_ready" class="col-sm-3 control-label optional-field">Ready to Check In</label>
+    <div class="checkbox col-sm-9">
+        <label class="checkbox-label">
+        {{ macros.checkbox(attendee, 'covid_ready') }}
+        This attendee is cleared to attend {{ c.EVENT_NAME }} under our COVID policies.
+        </label>
+    </div>
+</div>
+{% endif %}
