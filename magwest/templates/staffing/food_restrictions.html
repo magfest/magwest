@@ -6,15 +6,12 @@
 <h2> Dietary Restrictions </h2>
 
 {% if attendee.badge_type == c.GUEST_BADGE %}
-We feed our guests two meals per day during {{ c.EVENT_NAME }}, and our chefs have an easier time planning meals
+We feed our guests one meal per day during {{ c.EVENT_NAME }}, and our chefs have an easier time planning meals
 when they know what kind of food restrictions everyone has.
 {% else %}
-Thanks for volunteering, welcome to the fold! Please let us know any dietary restrictions or allergies below.
-<br/> Volunteers who have met hour requirements for food will be served 2 meals a day and have access to the Tea Room 24 hours a day!
+Thanks for volunteering and welcome to the fold! Please let us know any dietary restrictions or allergies below.
+<br/> Volunteers who have met hour requirements for food will be served 1 meal a day and have access to the Tea Room 24 hours a day!
 {% endif %}
-
-
-<br/> <br/><strong>We do not cook with dairy, corn, or seafood. Food with gluten or egg will always have alternatives.</strong>
 
 <br/> <br/>
 
@@ -26,23 +23,12 @@ Thanks for volunteering, welcome to the fold! Please let us know any dietary res
     <div id="restrictions">{{ macros.checkgroup(fr, 'standard') }}</div>
 
     <br/>
-    Let us know if you have any other allergies or restrictions,
-    please use commas to separate each allergy and food restriction.
-    <br/><br/>Please note we are unable to accommodate every constraint, and the form below is not designed for preferences due to taste.
+    Let us know if you have any other allergies or restrictions below. Please use commas to separate each item. Please note we are unable to accommodate every constraint, and the form below is not designed for preferences due to taste.
     <br/><br/>
     <textarea name="freeform" rows="3" cols="80">{{ fr.freeform }}</textarea>
 
     <br/> <br/> <input type="submit" value="Save" /><br/>
     By clicking Save I agree that I have read the above information and indicated any restrictions requested.
-
-    <br/> <br/>
-    * We understand that there are different types of vegetarians/vegans, but due to the amount of food and restrictions we have to work with, we cannot accommodate all types. All vegetarian options would also be vegan.
 </form>
-
-<script>
-    $(function () {
-        $(':checkbox[value={{  c.VEGAN }}]').parent().append('[1]');
-    });
-</script>
 
 {% endblock %}
