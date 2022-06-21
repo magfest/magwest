@@ -1,6 +1,7 @@
 from os.path import join
 
 from sideboard.lib import parse_config
+from uber.config import c
 from uber.jinja import template_overrides
 from uber.utils import mount_site_sections, static_overrides
 
@@ -8,6 +9,7 @@ from magwest._version import __version__  # noqa: F401
 
 
 config = parse_config(__file__)
+c.include_plugin_config(config)
 mount_site_sections(config['module_root'])
 static_overrides(join(config['module_root'], 'static'))
 template_overrides(join(config['module_root'], 'templates'))
