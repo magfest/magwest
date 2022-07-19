@@ -1,0 +1,49 @@
+{% extends "guest_checklist/band_merch_deadline.html" %}
+
+{% block deadline_headline %}Selling Merch and Autograph Sessions{% endblock %}
+{% block form_title %}Selling Merch and Autograph Sessions{% endblock %}
+
+{% block form_desc %}
+  <p>
+  There will be space outside the concert hall, (on the 2nd floor of the convention center space) 
+  where we will have several tables setup for you to sell merch or sign autographs. During and 
+  after your appearance, you will be guaranteed space at a table. If you would like to have 
+  additional time outside those hours, please indicate that here. We will have a rough schedule 
+  for when you may setup at a table outside the concert hall - if no one has set up a table or 
+  if there is space available you will be welcome to setup.
+  </p>
+  <p>
+  In order to sell merchandise a temporary Seller's Permit must be obtained for California. 
+  They are obtained through visiting the California Taxpayer Online Services Portal here: 
+  <a href="https://onlineservices.cdtfa.ca.gov/Directory/" target="_blank">https://onlineservices.cdtfa.ca.gov/Directory/</a>
+  </p>
+  <p>
+  New registrants should click Business Activity or Location under the Register or Apply for a New header section. 
+  Obtaining a permit is free and the required information for this permit include business location, mailing address, 
+  contact info, sales tax types responsible for, and other basic information.
+  </p>
+{% endblock %}
+
+{% block form_extra %}
+<div class="form-group" id="extra_times">
+  <div class="col-sm-6 col-sm-offset-3">
+    {{ macros.checkgroup_opts(
+      'extra_merch_time',
+      c.EXTRA_MERCH_TIME_OPTS,
+      label_format='Please let us have a slot {}',
+      defaults=guest_merch.extra_merch_time,
+      ) }}
+  </div>
+</div>
+<script>
+  var addOrRemoveTimes = function() {
+      var isDedicated = $.val('selling_merch') === {{ c.OWN_TABLE }};
+      setVisible('#extra_times', isDedicated);
+  };
+
+  $(function () {
+      addOrRemoveTimes();
+      $.field('selling_merch').on('change', addOrRemoveTimes);
+  });
+</script>
+{% endblock %}
