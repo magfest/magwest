@@ -18,10 +18,10 @@ jobs:
           ref: west2022
 
       - name: Log Files
-        run:
-          - echo "Listing files..."
-          - ls
-          - find
+        run: |
+          echo "Listing files..."
+          ls
+          find
 
       - name: Login to GHCR
         uses: docker/login-action@v1
@@ -31,10 +31,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Log More Files
-        run:
-          - echo "Listing files..."
-          - ls
-          - find
+        run: |
+          echo "Listing files..."
+          ls
+          find
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
