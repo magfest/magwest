@@ -20,6 +20,7 @@ jobs:
       - name: Log Files
         run: |
           echo "Listing files..."
+          pwd
           ls
           find
 
@@ -33,6 +34,7 @@ jobs:
       - name: Log More Files
         run: |
           echo "Listing files..."
+          pwd
           ls
           find
 
