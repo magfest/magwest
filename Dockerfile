@@ -1,4 +1,4 @@
-FROM ghcr.io/magfest/covid:west2022
+FROM ghcr.io/magfest/ubersystem:west2022
 
 # add our code
 COPY . plugins/magwest/
