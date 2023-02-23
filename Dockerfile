@@ -1,6 +1,7 @@
-FROM ghcr.io/magfest/covid:west2022
+FROM ghcr.io/magfest/ubersystem:west2021
 
-# add our code
+# install plugins
 COPY . plugins/magwest/
-RUN if [ -d plugins/magwest/plugins ]; then echo "copying plugins"; ls plugins/magwest/plugins/*; mv plugins/magwest/plugins/* plugins/; fi
+RUN git clone --depth 1 --branch west2021
+
 RUN /app/env/bin/paver install_deps
