@@ -1,4 +1,4 @@
-FROM ghcr.io/magfest/ubersystem:west2020
+FROM ghcr.io/magfest/ubersystem:west2019
 
 # install plugins
 COPY . plugins/magwest/
