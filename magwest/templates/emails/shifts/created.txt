@@ -6,18 +6,18 @@ You can complete the {{ c.EVENT_NAME }} volunteer checklist at:
 {{ c.URL_BASE }}/staffing/login?first_name={{ attendee.first_name|urlencode }}&last_name={{ attendee.last_name|urlencode }}&email={{ attendee.email|urlencode }}&zip_code={{ attendee.zip_code|urlencode }}
 
 This checklist includes:
-- Confirming that you are coming to {{ c.EVENT_NAME }}.
+- Confirming that you are coming to {{ c.EVENT_NAME }}
 - Requesting staff hotel crash space
-- Shift signup information.
-- Agreeing to our Volunteer Agreement.
+- Shift signup information
+- Agreeing to our Volunteer Agreement
 
 If you need to, you can verify/update your personal information at {{ c.URL_BASE }}/preregistration/confirm?id={{ attendee.id }}
 
-After August 11, you cannot drop shifts, but you can continue to sign up for shifts through the event.
+After {{ c.DROP_SHIFTS_DEADLINE.astimezone(c.EVENT_TIMEZONE).strftime('%B %-e') }}, you cannot drop shifts, but you can continue to sign up for shifts through the event.
 
 Please let us know if you have any questions.
 
 Thank You,
 Staffing Operations
 MAGWest
-stops@magfest.org
+stops@magwest.org
