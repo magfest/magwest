@@ -41,6 +41,18 @@
             </label>
         </div>
     </div>
+
+{% if admin_area %}
+<div class="form-group">
+    <label for="covid_ready" class="col-sm-3 control-label optional-field">Ready to Check In</label>
+    <div class="checkbox col-sm-9">
+        <label class="checkbox-label">
+        {{ macros.checkbox(attendee, 'covid_ready') }}
+        This attendee is cleared to attend {{ c.EVENT_NAME }} under our COVID policies.
+        </label>
+    </div>
+</div>
+{% endif %}
 {% endif %}
 
 {% if false and attendee.paid != c.NEED_NOT_PAY and not attendee.checked_in and not attendee.amount_unpaid and attendee.badge_status == c.COMPLETED_STATUS and (admin_area or c.PAGE_PATH == '/preregistration/confirm') %}
