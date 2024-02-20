@@ -14,47 +14,6 @@
     })
 </script>
 
-{# Copied from Covid plugin #}
-<script type="text/javascript">
-    $(function () {
-        {% if not admin_area %}
-            //$('#attend_virtually').insertBefore('#bold-field-message');
-        {% endif %}
-    });
-</script>
-
-{% if not admin_area %}
-    <div class="form-group">
-        <label class="col-sm-3 control-label">COVID Policy</label>
-        <div class="checkbox col-sm-9">
-            <label class="checkbox-label">
-            {{ macros.checkbox(attendee, 'agreed_to_covid_policies', is_readonly=read_only, clientside_bool=clientside_bool, is_required=True) }}
-            {% if c.COVID_POLICIES_URL %}
-            By checking this box, I acknowledge that I have read and agree to abide by the 
-            {{ macros.popup_link(c.COVID_POLICIES_URL, c.EVENT_NAME_AND_YEAR ~ " COVID Policies") }} in their entirety.
-            I understand the <strong>masking requirements</strong> for all individuals, including minors, and I
-            understand that MAGFest, Inc. has a <strong>no-refunds policy</strong>.
-            {% else %}
-            <strong>Yes</strong>, I understand that if accepted, I will need to agree to the {{ c.EVENT_NAME_AND_YEAR ~ " COVID Policy" }} 
-            in order to complete my {{ 'application' if attendee.is_dealer else 'registration' }}.{% if c.PRIOR_COVID_POLICIES_URL %} ({{ macros.popup_link(c.PRIOR_COVID_POLICIES_URL, "See last year's policy here") }}){% endif %}
-            {% endif %}
-            </label>
-        </div>
-    </div>
-
-{% if admin_area %}
-<div class="form-group">
-    <label for="covid_ready" class="col-sm-3 control-label optional-field">Ready to Check In</label>
-    <div class="checkbox col-sm-9">
-        <label class="checkbox-label">
-        {{ macros.checkbox(attendee, 'covid_ready') }}
-        This attendee is cleared to attend {{ c.EVENT_NAME }} under our COVID policies.
-        </label>
-    </div>
-</div>
-{% endif %}
-{% endif %}
-
 {% if false and attendee.paid != c.NEED_NOT_PAY and not attendee.checked_in and not attendee.amount_unpaid and attendee.badge_status == c.COMPLETED_STATUS and (admin_area or c.PAGE_PATH == '/preregistration/confirm') %}
 <div id="attend_virtually" class="alert alert-success">
     <div class="form-group">
@@ -114,17 +73,5 @@
     {{ macros.address_form(attendee, update_international=True, is_required=(not admin_area)) }}
     </div>
     {% endif %}
-</div>
-{% endif %}
-
-{% if admin_area %}
-<div class="form-group">
-    <label for="covid_ready" class="col-sm-3 control-label optional-field">Ready to Check In</label>
-    <div class="checkbox col-sm-9">
-        <label class="checkbox-label">
-        {{ macros.checkbox(attendee, 'covid_ready') }}
-        This attendee is cleared to attend {{ c.EVENT_NAME }} under our COVID policies.
-        </label>
-    </div>
 </div>
 {% endif %}
