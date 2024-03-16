@@ -1,0 +1,12 @@
+Dear {{ c.DEALER_TERM }} 
+
+Thank you for submitting your dealer's application to MAGWest. We appreciate your interest in our event and thank you for considering us as an avenue for your business.
+
+After careful review and consideration, we have decided to place your submission on a waitlist. This means that while we are unable to accept your submission at this time, we may consider it in the future should a suitable opportunity arise. Although we cannot accept all submissions received, we were astounded by the number of unique and wonderful entries that were sent in.
+
+Please note that sometimes opportunities arise at the last minute, and we may need to make a decision quickly. In the event that a spot becomes available for your business, we will notify you as soon as possible, which may be as little as a day before the event.
+
+Regardless of your status, we welcome you to attend the event and hope to see you there!
+
+Best regards,
+{{ c.MARKETPLACE_EMAIL_SIGNATURE }}

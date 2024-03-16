@@ -1,0 +1,6 @@
+Dear {{ c.DEALER_TERM }}, 
+
+
+Thank you for submitting your dealer's application to MAGWest. We appreciate your interest in our event and thank you for considering us as an avenue for your business. After careful review, we have decided that we are unable to accept your submission at this time. Please know that this decision was not a reflection of your skills or abilities, as we received many unique and incredible submissions and had to make some tough choices. We absolutely encourage you to apply next year and we welcome you to attend MAGWest regardless.
+
+{{ c.MARKETPLACE_EMAIL_SIGNATURE }}

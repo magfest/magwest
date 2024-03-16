@@ -1,0 +1,9 @@
+{{ group.leader.first_name }},
+
+Thanks again for registering as a {{ c.DEALER_TERM }} for this year's {{ c.EVENT_NAME }}. Our records indicate that your Dealer registration ({{ group.name }}) is still unpaid, and if we do not receive payment by {{ c.DEALER_PAYMENT_DUE|datetime_local }} then will be unapproved and your your table(s) will be unapproved and your spot will open for those on the waitlist.{% if c.DEALER_PAYMENT_DUE|timedelta(days=-7) > now_localized() %} You will receive 1 more reminder the week before your payment is due.{% endif %}
+
+You can use the credit card button on your group's page to pay the {{ group.amount_unpaid|format_currency }} that you owe: {{ c.URL_BASE }}/preregistration/group_members?id={{ group.id }}
+
+Let us know if you have any questions! We’re more than happy to help!
+
+{{ c.MARKETPLACE_EMAIL_SIGNATURE }}
