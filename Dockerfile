@@ -1,6 +1,7 @@
 FROM ghcr.io/magfest/ubersystem:main
+ENV uber_plugins=["magwest"]
 
 # install plugins
 COPY . plugins/magwest/
 
-RUN /app/env/bin/paver install_deps
+RUN uv pip install --system -r plugins/magwest/requirements.txt
