@@ -15,3 +15,4 @@ development.ini
 test.ini
 .history
 .DS_Store
+config.ini

@@ -2,8 +2,8 @@
 {% block title %}Dealer Application Received{% endblock %}
 {% block backlink %}{% endblock %}
 {% block content %}
-<div class="panel panel-default">
-  <div class="panel-body">
+<div class="card">
+  <div class="card-body">
     <h2>{% if group.status == c.WAITLISTED %}You've been added to our waitlist!{% else %}Thanks for applying as a Dealer!{% endif %}</h2>
 
     We've received your application for {{ group.name }} to purchase a Dealer registration for {{ c.EVENT_NAME }}.

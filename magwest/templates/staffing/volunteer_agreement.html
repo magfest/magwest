@@ -11,11 +11,11 @@ This Volunteer Agreement has two sections; one is legal and the other is cultura
 
 <p><strong>Beyond that, it's important to us that you understand volunteer expectations, as well as what you can expect from MAGFest. Read on!</strong></p>
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">MAGFest Legal Volunteer Agreement</h3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">MAGFest Legal Volunteer Agreement</h3>
       </div>
-    <div class="panel-body">
+    <div class="card-body">
         <p>
             This Volunteer Agreement (the "Agreement") is entered into by and between MAGFest, Inc. (the "Company"),
             and {{ attendee.full_name }} ("Volunteer"), and is effective as of {{ now()|datetime("%m/%d, %Y") }} (the "Effective Date").
@@ -85,7 +85,7 @@ This Volunteer Agreement has two sections; one is legal and the other is cultura
             which, when taken together, will constitute one Agreement.
             </p>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
         {% if not attendee.agreed_to_volunteer_agreement %}
         <label for="agreed_to_terms_1">
             I agree to the terms of the legal volunteer agreement: <input type="checkbox" id="agreed_to_terms_1" name="agreed_to_terms_1" form="volunteer_agreement"{% if agreed_to_terms_1 %} checked="checked"{% endif %} />
@@ -96,11 +96,11 @@ This Volunteer Agreement has two sections; one is legal and the other is cultura
     </div>
   </div>
 
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">MAGFest Community Volunteer Agreement</h3>
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">MAGFest Community Volunteer Agreement</h3>
       </div>
-    <div class="panel-body">
+    <div class="card-body">
         <p>MAGFest depends on committed volunteers to make our events happen. We could not do this without you and we are so grateful for all you do and the community you have helped to create. To ensure that staff, volunteers, attendees, and guests have the best experience possible, we have developed the following agreement between volunteers and MAGFest, Inc.</p>
 
         <p>MAGFest, Inc. agrees to:
@@ -152,7 +152,7 @@ This Volunteer Agreement has two sections; one is legal and the other is cultura
         </ul>
         </p>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
         {% if not attendee.agreed_to_volunteer_agreement %}
         <form method="post" action="volunteer_agreement" id="volunteer_agreement">
             {{ csrf_token() }}
