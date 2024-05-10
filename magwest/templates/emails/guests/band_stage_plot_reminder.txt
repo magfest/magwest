@@ -9,8 +9,12 @@ An "exact description" should include for each piece of equipment to go on stage
 
 Remember to indicate mic stands and monitors. A miked drum kit will be provided as backline, and may remain on stage even for acts that do not make use of it.
 
+Additionally, please also indicate if you have a visualist, or plan to be providing visuals (e.g. on a USB key, google drive link, via HDMI on stage, etc.) in the plot
+
 The plot can be supplied as a PDF, a drawing you've taken a photo of & upload the photo, google slides (put a link into a text document & upload), PowerPoint etc.
 
 Failure to provide exact stage directions may result in you not receiving the setup you expect or want.  Please provide this description no later than {{ c.BAND_STAGE_PLOT_DEADLINE|datetime_local }}.
+
+For Questions, please contact us in the MAGWest 2024 - Music Booking, under your private chanel, or reply to this email.
 
 {{ c.BAND_EMAIL_SIGNATURE }}
