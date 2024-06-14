@@ -67,14 +67,6 @@ AutomatedEmailFixture(
     sender="MAGWest LAN Staff <lan@magwest.org>")
 
 
-StopsEmailFixture(
-    'CORRECTION to the {EVENT_NAME} ({EVENT_DATE}) Shift Schedule Email',
-    'shifts/schedule_correction.html',
-    lambda a: c.SHIFTS_CREATED and a.weighted_hours,
-    when=days_before(1, c.FINAL_EMAIL_DEADLINE),
-    ident='volunteer_shift_schedule_correction')
-
-
 AutomatedEmailFixture(
     Attendee,
     'Last Chance for MAGWest {EVENT_YEAR} bonus swag!',
