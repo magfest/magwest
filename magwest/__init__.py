@@ -7,6 +7,7 @@ from uber.utils import mount_site_sections, static_overrides
 
 from magwest._version import __version__  # noqa: F401
 from magwest.config import *
+from magwest.model_checks import *
 
 
 mount_site_sections(config['module_root'])
