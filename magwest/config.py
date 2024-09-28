@@ -19,7 +19,7 @@ class ExtraConfig:
         if c.AT_THE_CON and self.ONE_DAYS_ENABLED and self.ONE_DAY_BADGE_AVAILABLE:
             badge_types.append({
                 'name': 'Single Day',
-                'desc': 'Allows access to the convention for today. Can be upgraded to a weekend badge.',
+                'desc': 'Allows access to the convention for the day. Come back to registration to upgrade to a full weekend pass!',
                 'value': c.ONE_DAY_BADGE,
                 'price': c.ONEDAY_BADGE_PRICE
             })
