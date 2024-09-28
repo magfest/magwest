@@ -93,5 +93,5 @@ AutomatedEmail.email_overrides.extend([
     ('panel_waitlisted', 'subject', f"Waitlisted - {c.EVENT_NAME_AND_YEAR} Panel Application"),
     ('panel_accept_reminder', 'subject', f"Last Chance to Confirm Your Panel - {c.EVENT_NAME_AND_YEAR}"),
     ('panel_scheduled', 'subject', f"Your Panel has been Scheduled - {c.EVENT_NAME_AND_YEAR}"),
-    ('marketplace_approved', 'allow_at_the_con', True)
+    ('dealer_reg_approved', 'allow_at_the_con', True)
     ])
