@@ -1,4 +1,4 @@
-FROM ghcr.io/magfest/ubersystem:main
+FROM ghcr.io/magfest/ubersystem:west2024
 ENV uber_plugins=["magwest"]
 
 # install plugins
