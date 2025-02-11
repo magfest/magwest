@@ -7,7 +7,7 @@ from uber.config import c
 class Attendee:
     @property
     def approved_panel_apps(self):
-        return [panel.name for panel in self.panel_applications if panel.status == c.ACCEPTED]
+        return [panel.name for panel in self.submitted_panels if panel.status == c.ACCEPTED]
 
 
 @Session.model_mixin
