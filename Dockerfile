@@ -4,4 +4,4 @@ ENV uber_plugins=["magwest"]
 # install plugins
 COPY . plugins/magwest/
 
-RUN /root/.local/bin/uv pip install --system -r requirements.txt;
+RUN $HOME/.local/bin/uv pip install --system -r requirements.txt;
