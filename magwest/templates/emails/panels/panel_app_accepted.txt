@@ -1,8 +1,9 @@
 {{ app.submitter.first_name }},
 
-Congratulations, "{{ app.name }}", the panel you submitted for {{ c.EVENT_NAME_AND_YEAR }}, has been approved. IT IS IMPORTANT TO MAKE SURE YOU CHECK YOUR SPAM/JUNK/QUARANTINE FOLDERS FOR OUR UPDATES.{% if app.confirm_deadline %}
+Congratulations, "{{ app.name }}", the panel you submitted for {{ c.EVENT_NAME_AND_YEAR }}, has been approved. IT IS IMPORTANT TO MAKE SURE YOU CHECK YOUR SPAM/JUNK/QUARANTINE FOLDERS FOR OUR UPDATES.
 
-You must confirm you can still run the panel or your submission will automatically be put on the waitlist on {{ app.confirm_deadline|datetime_local }}. You can confirm by clicking this link: {{ c.URL_BASE }}/panels/confirm_panel?id={{ app.id }}{% endif %}
+PLEASE CONFIRM YOUR PANEL BY CLICKING: {{ c.URL_BASE }}/panels/confirm_panel?id={{ app.id }} {% if app.confirm_deadline %}You must confirm you can still run the panel {{ app.confirm_deadline_text }} or we will release your spot to those on the waitlist.{% endif %}
+
 
 After you confirm your attendance, we will send you another e-mail to confirm your availability on our schedule.  Note that your day and time will be manually scheduled based on the availability you specified on your submission. If this availability has changed, please let us know as soon as possible, as we will not be reaching out again for availability before scheduling.
 
