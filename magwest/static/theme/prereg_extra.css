@@ -1,10 +1,10 @@
 body {
-    background-color: #090909;
+    background-color: #000;
     background-image: none;
 }
 
 .masthead {
-    padding-top: 30.86%;
+    padding-top: 26.59%; /* The height is 26.59% of the width (472 / 1775) */
 }
 
 .landing-title {
