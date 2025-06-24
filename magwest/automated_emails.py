@@ -6,15 +6,6 @@ from uber.models import Attendee, AutomatedEmail
 from uber.utils import before, days_before, days_after
 
 
-PanelAppEmailFixture(
-    f'Approved - MAGWest 2024 Panel Application - Please confirm your attendance!',
-    'panels/panel_app_confirm.txt',
-    lambda app: app.status == c.ACCEPTED and not app.confirmed,
-    needs_approval=True,
-    ident='panel_app_confirm'
-)
-
-
 MarketplaceEmailFixture(
         f'Waitlisted - {c.EVENT_NAME_AND_YEAR}',
         'dealers/waitlisted.txt',
