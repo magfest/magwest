@@ -14,6 +14,10 @@ class Attendee:
     def approved_panel_apps(self):
         return [panel.name for panel in self.submitted_panels if panel.status == c.ACCEPTED]
 
+@Session.model_mixin
+class Group:
+    night_market = Column(Boolean, default=False)
+
 
 @Session.model_mixin
 class GuestMerch:

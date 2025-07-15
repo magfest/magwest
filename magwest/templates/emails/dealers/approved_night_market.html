@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<p>
+<p>Hello there! Thank you for submitting your dealer's application for this year's MAGWest Marketplace. Your group ({{ group.name }}) has been approved as a {{ c.EVENT_NAME }} Dealer for the Secret Marketplace Pop-up this coming {{ event_dates() }}!</p>
+
+<p>By proceeding with the purchase of your table(s), you are implicitly agreeing to comply with both the MAGWest Marketplace agreement and the event's <a href="{{ c.CODE_OF_CONDUCT_URL }}" target="_blank">code of conduct</a>. To view the MAGWest Marketplace agreement and purchase your approved tables, go ahead and pay the ${{ group.cost }} you owe using the credit card button <a href="{{ c.URL_BASE }}/preregistration/group_members?id={{ group.id }}">on this page</a>.</p>
+
+<p>Payment is expected by: {{ c.DEALER_PAYMENT_DUE|datetime_local }}. Failure to pay by this date may result in removal of your application and your tables being filled by another applicant.</p>
+
+{% if group.unassigned_badges %}<p>Some of your badges are not yet assigned to a specific person. If you assign these badges now then it will take much less time for their owners to pick them up at the festival. You may do this by <a href="{{ c.URL_BASE }}/preregistration/group_members?id={{ group.id }}">clicking here</a>.</p>{% endif %}
+
+<p>This registration includes:
+<ul>
+    <li> {{ group.tables }} table{{ group.tables|pluralize }} ({{ group.default_table_cost|format_currency }}) </li>
+    <li> {{ group.badges }} badge{{ group.badges|pluralize }} ({{ group.default_badge_cost|format_currency }}) </li>
+</ul></p>
+
+<p>Looking forward to working with you! Cheers!</p>
+
+{{ c.MARKETPLACE_EMAIL_SIGNATURE }}
+</body>
+</html>

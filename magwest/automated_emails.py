@@ -14,6 +14,7 @@ MarketplaceEmailFixture(
         needs_approval=True,
         ident='dealer_reg_waitlisted')
 
+
 MarketplaceEmailFixture(
         f'About your Declined Dealer\'s Application - {c.EVENT_NAME_AND_YEAR}',
         'dealers/declined.txt',
@@ -21,6 +22,25 @@ MarketplaceEmailFixture(
         # query=Group.status == c.DECLINED,
         needs_approval=True,
         ident='dealer_reg_declined')
+
+
+MarketplaceEmailFixture(
+        'Your {} {} has been approved'.format(c.EVENT_NAME, c.DEALER_APP_TERM.capitalize()),
+        'dealers/approved.html',
+        lambda g: g.status == c.APPROVED and not g.night_market,
+        # query=Group.status == c.APPROVED,
+        needs_approval=True,
+        allow_at_the_con=True,
+        ident='dealer_reg_approved')
+
+
+MarketplaceEmailFixture(
+        'Your {} {} has been approved'.format(c.EVENT_NAME, c.DEALER_APP_TERM.capitalize()),
+        'dealers/approved_night_market.html',
+        lambda g: g.status == c.APPROVED and g.night_market,
+        # query=Group.status == c.APPROVED,
+        needs_approval=True,
+        ident='dealer_reg_approved_night')
 
 
 AutomatedEmailFixture(
@@ -84,5 +104,4 @@ AutomatedEmail.email_overrides.extend([
     ('panel_waitlisted', 'subject', f"Waitlisted - {c.EVENT_NAME_AND_YEAR} Panel Application"),
     ('panel_accept_reminder', 'subject', f"Last Chance to Confirm Your Panel - {c.EVENT_NAME_AND_YEAR}"),
     ('panel_scheduled', 'subject', f"Your Panel has been Scheduled - {c.EVENT_NAME_AND_YEAR}"),
-    ('dealer_reg_approved', 'allow_at_the_con', True)
     ])
