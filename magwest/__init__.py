@@ -9,7 +9,7 @@ from ._version import __version__  # noqa: F401
 from .config import *
 from .forms import *
 from .model_checks import *
-
+from .tasks import *
 
 mount_site_sections(config['module_root'])
 static_overrides(join(config['module_root'], 'static'))

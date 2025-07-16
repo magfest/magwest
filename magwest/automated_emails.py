@@ -44,6 +44,16 @@ MarketplaceEmailFixture(
 
 
 AutomatedEmailFixture(
+    Attendee, 'Thank you for your Super MAGWest Superstars Donation!',
+    'superstar_intro.html',
+    filter=lambda a: a.extra_donation >= c.SUPERSTAR_MINIMUM and a.active_receipt and not a.amount_unpaid,
+    ident='superstar_intro',
+    when=before(c.SUPERSTAR_DEADLINE),
+    sender='MAGWest Superstar Program <superstars@magfest.org>'
+)
+
+
+AutomatedEmailFixture(
     Attendee,
     '{EVENT_NAME} food for guests',
     'guest_food_restrictions.txt',

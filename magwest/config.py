@@ -12,7 +12,11 @@ config = parse_config("magwest", Path(__file__).parents[0])
 c.include_plugin_config(config)
 
 @Config.mixin
-class ExtraConfig:    
+class ExtraConfig:
+    @property
+    def SUPERSTAR_MINIMUM(self):
+        return list(c.SUPERSTAR_DONATIONS.keys())[1]
+
     @property
     def FORMATTED_BADGE_TYPES(self):
         badge_types = []

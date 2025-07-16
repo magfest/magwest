@@ -3,9 +3,11 @@ import pytz
 from datetime import datetime, timedelta
 
 from uber.custom_tags import datetime_local_filter
+from uber.decorators import presave_adjustment
 from uber.models import Session, Boolean
 from uber.models.types import DefaultColumn as Column, MultiChoice
 from uber.config import c
+from uber.utils import add_opt, remove_opt
 
 
 @Session.model_mixin
@@ -13,6 +15,15 @@ class Attendee:
     @property
     def approved_panel_apps(self):
         return [panel.name for panel in self.submitted_panels if panel.status == c.ACCEPTED]
+
+    @presave_adjustment
+    def set_superstar_ribbon(self):
+        if self.extra_donation >= c.SUPERSTAR_MINIMUM and c.SUPERSTAR_RIBBON not in self.ribbon_ints:
+            self.ribbon = add_opt(self.ribbon_ints, c.SUPERSTAR_RIBBON)
+        elif self.extra_donation < c.SUPERSTAR_MINIMUM and \
+                self.orig_value_of('extra_donation') >= c.SUPERSTAR_MINIMUM and c.SUPERSTAR_RIBBON in self.ribbon_ints:
+            self.ribbon = remove_opt(self.ribbon_ints, c.SUPERSTAR_RIBBON)
+
 
 @Session.model_mixin
 class Group:
