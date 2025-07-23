@@ -4,7 +4,7 @@
 
 This scheduling can potentially be changed in the event of a cancellation or other request to switch, but was chosen based on yours and others' declared availability from your submission.
 
-In the meantime, please review our <link will be inserted soon>Welcome Packet on how to navigate the event as a panelist!
+In the meantime, please review our Welcome Packet (https://bit.ly/magwestpanelswelcomepacket) on how to navigate the event as a panelist!
 
 If you have any questions or concerns, please don't hesitate to send them to {{ c.PANELS_EMAIL|email_only }}.
 
