@@ -6,4 +6,4 @@ Regardless, we still would love to see you at MAGWest as you're welcomed to enjo
 
 Please don't hesitate to let us know if you have any questions or concerns.  Otherwise, we look forward to seeing you at {{ c.EVENT_NAME }}!
 
-{{ c.PANELS_EMAIL_SIGNATURE }}
+{{ email_signature }}

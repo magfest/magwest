@@ -19,7 +19,7 @@ def attendee_badge_under_13(attendee):
         return
     
     if not attendee.is_new and attendee.badge_status != c.PENDING_STATUS \
-            or attendee.unassigned_group_reg or attendee.valid_placeholder:
+            or attendee.unassigned_group_reg or attendee.placeholder:
         return
 
     if c.CHILD_BADGE in c.PREREG_BADGE_TYPES and attendee.birthdate and attendee.badge_type == c.ATTENDEE_BADGE and (

@@ -24,6 +24,31 @@ class Attendee:
                 self.orig_value_of('extra_donation') >= c.SUPERSTAR_MINIMUM and c.SUPERSTAR_RIBBON in self.ribbon_ints:
             self.ribbon = remove_opt(self.ribbon_ints, c.SUPERSTAR_RIBBON)
 
+    @property
+    def staff_merch_items(self):
+        """Used by the merch and staff_merch properties for staff swag."""
+        merch = ["Volunteer lanyard"] if self.staffing and self.weighted_hours >= 1 and \
+            self.badge_type != c.CONTRACTOR_BADGE else []
+        num_staff_shirts_owed = self.num_staff_shirts_owed
+        if num_staff_shirts_owed > 0:
+            staff_shirts = '{} Staff Shirt{}'.format(num_staff_shirts_owed, 's' if num_staff_shirts_owed > 1 else '')
+            if self.shirt_size_marked:
+                try:
+                    if c.STAFF_SHIRT_OPTS != c.SHIRT_OPTS:
+                        staff_shirts += ' [{}]'.format(c.STAFF_SHIRTS[self.staff_shirt])
+                    else:
+                        staff_shirts += ' [{}]'.format(c.SHIRTS[self.shirt])
+                except KeyError:
+                    staff_shirts += ' [{}]'.format("Size unknown")
+            merch.append(staff_shirts)
+        elif self.could_get_staff_shirt and self.shirt_opt_out in [c.STAFF_OPT_OUT, c.ALL_OPT_OUT]:
+            merch.append("NO Staff Shirt")
+
+        if self.staffing:
+            merch.append('Staffer Info Packet')
+
+        return merch
+
 
 @Session.model_mixin
 class Group:

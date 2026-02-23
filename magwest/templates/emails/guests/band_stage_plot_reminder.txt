@@ -19,4 +19,4 @@ Failure to provide exact stage directions may result in you not receiving the se
 
 If you have any questions, please reach out in the MAGWest 2024 - Music Booking discord server, under your private channel, or reply to this email. 
 
-{{ c.BAND_EMAIL_SIGNATURE }}
+{{ email_signature }}

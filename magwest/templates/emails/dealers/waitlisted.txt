@@ -9,4 +9,4 @@ Please note that sometimes opportunities arise at the last minute, and we may ne
 Regardless of your status, we welcome you to attend the event and hope to see you there!
 
 Best regards,
-{{ c.MARKETPLACE_EMAIL_SIGNATURE }}
+{{ email_signature }}

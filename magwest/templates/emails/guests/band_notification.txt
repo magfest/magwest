@@ -6,4 +6,4 @@ You can complete every step on the checklist at {{ c.URL_BASE }}/guests/index?id
 
 We also have a discord server that we have setup to coordinate and discuss things - we will be sending that on seperately. For starters we suggest your main point of contact join.
 
-{{ c.BAND_EMAIL_SIGNATURE }}
+{{ email_signature }}

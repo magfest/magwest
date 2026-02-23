@@ -6,4 +6,4 @@ You can use the credit card button on your group's page to pay the {{ group.amou
 
 Let us know if you have any questions! We’re more than happy to help!
 
-{{ c.MARKETPLACE_EMAIL_SIGNATURE }}
+{{ email_signature }}
