@@ -4,11 +4,11 @@ body {
 }
 
 .masthead {
-    padding-top: 26.59%; /* The height is 26.59% of the width (472 / 1775) */
+    padding-top: 30.86%; /* The height is 30.86% of the width (500 / 1620) */
 }
 
 .landing-title {
-    color: white;
+    color: black;
 }
 
 @media
