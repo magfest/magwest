@@ -33,7 +33,7 @@ def superstar_receipts():
                 already_emailed = session.query(Email.ident).filter(Email.ident == ident,
                                                                     Email.fk_id == attendee.id).first()
                 if not already_emailed:
-                    subject = f"MAGFest {c.EVENT_YEAR} Superstar Donation Receipt"
+                    subject = f"MAGWest {c.EVENT_YEAR} Superstar Donation Receipt"
                     body = render('emails/superstar_receipt.html', {'donation': donation, 'attendee': attendee},
                                   encoding=None)
                     send_email("MAGWest Superstar Program <superstars@magfest.org>", attendee.email_to_address,
