@@ -1,4 +1,4 @@
-from wtforms import (BooleanField)
+from wtforms import (BooleanField, HiddenField, IntegerField)
 
 from uber.config import c
 from uber.forms import MagForm
