@@ -69,7 +69,7 @@ class GuestStagePlot:
 class PanelApplication:
     @property
     def confirm_deadline(self):
-        if self.has_been_accepted and not self.confirmed and not (self.group and self.group.guest):
+        if c.PANELS_CONFIRM_DEADLINE and self.has_been_accepted and not self.confirmed and not (self.group and self.group.guest):
             if not c.PANELS_INITIAL_CONFIRM_DEADLINE or datetime.now(tz=pytz.UTC) > c.PANELS_INITIAL_CONFIRM_DEADLINE:
                 confirm_deadline = timedelta(days=c.PANELS_CONFIRM_DEADLINE)
                 return self.accepted + confirm_deadline
@@ -77,6 +77,9 @@ class PanelApplication:
 
     @property
     def confirm_deadline_text(self):
+        if not c.PANELS_CONFIRM_DEADLINE:
+            return ''
+
         if not c.PANELS_INITIAL_CONFIRM_DEADLINE or datetime.now(tz=pytz.UTC) > c.PANELS_INITIAL_CONFIRM_DEADLINE:
             return f"within {c.PANELS_CONFIRM_DEADLINE} days"
         return f"by {datetime_local_filter(c.PANELS_INITIAL_CONFIRM_DEADLINE)}"
