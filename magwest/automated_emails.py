@@ -85,6 +85,7 @@ AutomatedEmailFixture(
     '{EVENT_NAME} FAQ',
     'prefest_faq.html',
     lambda a: a.badge_status == c.COMPLETED_STATUS and days_before(7, c.FINAL_EMAIL_DEADLINE),
+    allow_at_the_con=True,
     ident='magwest_prefest_faq')
 
 
