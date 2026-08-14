@@ -45,7 +45,7 @@ class Attendee:
             merch.append("NO Staff Shirt")
 
         if self.num_free_event_shirts:
-            merch.append("A free event shirt")
+            merch.append(f"A free event shirt (Size {c.SHIRTS[self.shirt]})")
             if merch and self.volunteer_event_shirt_eligible and not self.volunteer_event_shirt_earned:
                 merch[-1] += (
                     ' (this volunteer must work at least {} hours or they will be reported for picking up their shirt)'
