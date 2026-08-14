@@ -44,6 +44,13 @@ class Attendee:
         elif self.could_get_staff_shirt and self.shirt_opt_out in [c.STAFF_OPT_OUT, c.ALL_OPT_OUT]:
             merch.append("NO Staff Shirt")
 
+        if self.num_free_event_shirts:
+            merch.append("A free event shirt")
+            if merch and self.volunteer_event_shirt_eligible and not self.volunteer_event_shirt_earned:
+                merch[-1] += (
+                    ' (this volunteer must work at least {} hours or they will be reported for picking up their shirt)'
+                    .format(c.HOURS_FOR_SHIRT))
+
         if self.staffing:
             merch.append('Staffer Info Packet')
 
